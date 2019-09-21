@@ -3,7 +3,7 @@
 #### Basic Commands
 ##### Run a container
 ```bash
-docker run <container_image>
+docker run <DOCKER_IMAGE_TAG>
 docker run redis
 ```
 
@@ -19,12 +19,12 @@ docker ps --all
 
 ##### Stop a container
 ````bash
-docker stop <container_id>
+docker stop <CONTAINER_ID>
 ````
 
 ##### Kill a container
 ````bash
-docker kill <container_id>
+docker kill <CONTAINER_ID>
 ````
 
 ##### Remove unused resources
@@ -34,11 +34,11 @@ docker system prune
 
 ##### Go into a container through shell
 ```bash
-docker exec -it <container_id> sh
+docker exec -it <CONTAINER_ID> sh
 ```
 
 ##### Start a container with shell
 ```bash
-docker run -it <container_image> sh
+docker run -it <DOCKER_IMAGE_TAG> sh
 docker run -it redis sh
 ```
