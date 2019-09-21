@@ -13,19 +13,19 @@ RUN apk add --update redis
 CMD ["redis-server"]
 ```
 
-##### Build Image
+##### Build image
 ```bash
 docker build .
 ```
 
-##### Build Image (Using Tag)
+##### Build image (Using tag)
 ```bash
 docker build . -t <dockerhub_username>/<tag>:latest
 ```
 
 #### Create Image (Manual Commit)
 
-##### Go into 'alpine'
+##### Start 'alpine' with a shell
 ```bash
 docker run -it alpine sh
 ```
