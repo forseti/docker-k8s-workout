@@ -1,7 +1,7 @@
-# 03_redis_image
-Two ways:
-1. Dockerfile
-2. Manual Commit
+# 03_build_custom_image
+Two ways to build a custom image:
+1. Using `Dockerfile`
+2. Through a manual commit
 
 #### Create Image (Dockerfile)
 ##### Create Dockerfile
@@ -36,7 +36,7 @@ docker run <DOCKER_IMAGE_TAG>
 docker run yourusername/redis
 ```
 
-#### Create Image (Manual Commit)
+#### Create Image (Manual commit)
 
 ##### Start 'alpine' with a shell
 ```bash
