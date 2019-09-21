@@ -1,4 +1,4 @@
-# section02_docker_client
+# 02_docker_client
 
 #### Basic Commands
 ##### Run a container

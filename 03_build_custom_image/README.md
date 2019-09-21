@@ -1,4 +1,4 @@
-# section03_redis_image
+# 03_redis_image
 Two ways:
 1. Dockerfile
 2. Manual Commit
