@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -f Dockerfile.dev -t anydockerhubusername/frontend .
+
+script:
+  - docker run -e CI=true anydockerhubusername/frontend npm run test -- --coverage
