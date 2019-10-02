@@ -51,14 +51,14 @@ CMD ["npm", "start"]
 
 #### Running our application in a container
 ##### Build our image
-```bash
+```console
 docker build -t <DOCKERHUB_USERNAME>/<TAG> .
 docker build -t yourusername/simpleweb .
 ```
 Note that `<DOCKERHUB_USERNAME>/<TAG>` combination forms a `<DOCKER_IMAGE_TAG>` for our image.
 
 ##### Run docker with port forwarding
-```bash
+```console
 docker run -p <PORT_NUMBER_ON_LOCALHOST>:<PORT_NUMBER_OF_THE_APP_IN_THE_CONTAINER> <DOCKER_IMAGE_TAG>
 docker run -p 8080:8080 yourusername/simpleweb
 ```

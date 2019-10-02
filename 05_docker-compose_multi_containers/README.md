@@ -7,27 +7,27 @@ This project is an example of running a multi-tier application that use Node.js 
 For this section use `0501_visits_app` sub-project.
 
 ##### Run our multi-tier application
-```bash
+```console
 docker-compose up
 ```
 
 ##### Build before running our multi-tier application
-```bash
+```console
 docker-compose up --build
 ```
 
 ##### Run our multi-tier application as daemon process
-```bash
+```console
 docker-compose up -d
 ```
 
 ##### Terminate our multi-tier application
-```bash
+```console
 docker-compose down
 ```
 
 ##### Check the process
-```bash
+```console
 docker-compose ps
 ```
 

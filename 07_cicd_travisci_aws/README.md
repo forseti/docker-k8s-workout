@@ -5,6 +5,6 @@ Due to limitation in Travis CI, this project is hosted independently at https://
 #### Some Tips
 ##### Running test on CI Server
 Set environment variable CI=true for Jest
-```bash
+```console
 docker run -e CI=true yourusername/frontend npm run test -- --coverage
 ```
