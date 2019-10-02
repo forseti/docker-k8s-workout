@@ -1,7 +1,2 @@
-# 12_kubernetes
-#### Docker Desktop's Kubernetes
-##### Troubleshooting "Kubernetes is starting..."
-Open the PowerShell and run the following command. The solutions is copied from [here](https://github.com/docker/for-win/issues/1649#issuecomment-366658253)
-```powershell
-[Environment]::SetEnvironmentVariable("KUBECONFIG", $HOME + ".kube\config", [EnvironmentVariableTarget]::Machine)
-```
+# docker-k8s-workout
+This is a Docker/Kubernetes workout from Udemy [course](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide)
