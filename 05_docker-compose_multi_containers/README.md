@@ -44,12 +44,12 @@ services:
     restart: always
 ```
 
-|	Policy		 |	Description														 |
-|----------------|-------------------------------------------------------------------|
-| "no" 			 | Never attempts to restart this container if it stops or crashes   |
-| always		 | If this container stops "for any reason" always try to restart it |
-| on-failure	 | Only restart if the container stops with an error code (> 0) 	 |
-| unless-stopped | Always restart unless we (the developers) forcibly stop it 		 |
+| Policy | Description |
+|---|---|
+| "no" | Never attempts to restart this container if it stops or crashes |
+| always | If this container stops "for any reason" always try to restart it |
+| on-failure | Only restart if the container stops with an error code (> 0) |
+| unless-stopped | Always restart unless we (the developers) forcibly stop it |
 
 `always` works best for web applications.
 

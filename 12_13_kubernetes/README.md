@@ -7,19 +7,19 @@ Open the PowerShell and run the following command to set the `KUBECONFIG` variab
 ```
 
 ##### Object's Kind #####
-|	Kind		 |	Description														  |
-|----------------|--------------------------------------------------------------------|
-| Pods 			 | Runs one (or more closely related containers)   					  |
-| Services		 | Sets up networking in Kubernetes' Cluster 						  |
+| Kind | Description |
+|---|--------------------------------------------------------------------|
+| Pods 			 | Runs one (or more closely related containers) |
+| Services		 | Sets up networking in Kubernetes' Cluster |
 | Deployment	 | Maintains a set of identical pods, ensuring correct configurations |
 
 Differences between Pods and Deployment
 
-|  Pods 								  | Deployment 											  |
-|-----------------------------------------|-------------------------------------------------------|
-| Runs a single set of containers 		  | Runs a set of identical pods (one or more) 			  |
-| Good for one-off development purposes   | Monitors the state of each pod, updating as necessary |
-| Rarely used in production       		  | Good for development and production					  |
+| Pods | Deployment |
+|---|---|
+| Runs a single set of containers | Runs a set of identical pods (one or more) |
+| Good for one-off development purposes | Monitors the state of each pod, updating as necessary |
+| Rarely used in production | Good for development and production |
 
 ###### `NodePort` #######
 `NodePort` exposes the service on each Node's IP at a static port. Available port's range between `30000` and `32767`
