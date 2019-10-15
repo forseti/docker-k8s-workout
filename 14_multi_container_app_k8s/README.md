@@ -6,6 +6,7 @@
 |---|---|
 | Pods | Runs one or more closely related containers |
 | Services | Sets up networking in a Kubernetes cluster |
+| Secrets | Securely stores a piece of information in the cluster, such as a database password |
 
 #### Services
 
@@ -62,4 +63,26 @@ There are two types of PV:
 | Statically Provisioned PV | Persistent Volume that is created ahead of time |
 | Dynamic Provisioned PV | Persistent Volume that is created on the fly |
 
+There are three access modes for PVC:
 
+| Access Mode | Description |
+|---|---|
+| ReadWriteOnce | Can be used by a single node |
+| ReadOnlyMany | Multiple nodes can read from this |
+| ReadWriteMany | Can be read and written to by many nodes |
+
+The available storage classes can be found at: https://kubernetes.io/docs/concepts/storage/storage-classes/
+
+#### Secret
+
+To store sensitive data, we create a secret using `kubectl`:
+```console
+kubectl create secret <SECRET_TYPE> <SECRET_NAME> --from-literal <KEY>=<VALUE>
+```
+
+`<SECRET_TYPE>` can be `docker-registry`, `generic`, etc
+
+For example:
+```console
+kubectl create secret generic pg-password --from-literal PG_PASSWORD=12345asdf 
+```
