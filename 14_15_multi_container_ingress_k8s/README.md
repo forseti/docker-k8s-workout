@@ -1,4 +1,4 @@
-# 14_multi_container_apps_k8s
+# 14_multi_container_ingress_k8s
 
 #### Objects
 
@@ -14,6 +14,8 @@
 |---|---|
 | ClusterIP | Exposes a set of pods to other objects in the cluster |
 | NodePort | Exposes a set of pods to the outside world (only good for dev purposes) |
+| LoadBalancer | Legacy way of getting network traffic into a cluster |
+| Ingress | Expose a set of services to the outside world |
 
 #### Combined Configuration
 
@@ -86,3 +88,8 @@ For example:
 ```console
 kubectl create secret generic pg-password --from-literal PG_PASSWORD=12345asdf 
 ```
+
+#### Ingress ([`ingress-nginx`](https://github.com/kubernetes/ingress-nginx))
+
+Ingress Controller governs and routes the incoming traffic, and also watches for changes to the ingress.
+Ingress Config is an object that has a set of rules describing how traffic should be routed.
