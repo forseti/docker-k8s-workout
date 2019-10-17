@@ -24,7 +24,7 @@ We can have a combined configurations in `.yml` files. All we need is to have a 
 apiVersion: v1
 kind: Service
 metadata:
-  name: api-cluster-ip-service
+  name: api-cluster-ip
 spec:
   type: ClusterIP
   selector:
@@ -36,7 +36,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: client-cluster-ip-service
+  name: client-cluster-ip
 spec:
   type: ClusterIP
   selector:
@@ -93,3 +93,32 @@ kubectl create secret generic pg-password --from-literal PG_PASSWORD=12345asdf
 
 Ingress Controller governs and routes the incoming traffic, and also watches for changes to the ingress.
 Ingress Config is an object that has a set of rules describing how traffic should be routed.
+
+##### Installation
+
+For Docker Desktop, first run **Mandatory Command**:
+```console
+https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/cloud-generic.yaml
+```
+
+Then enable the service, using the following command:
+```console
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/cloud-generic.yaml
+```
+
+To verify the Ingress service is enabled:
+```console
+kubectl get svc -n ingress-nginx
+```
+
+##### Debugging
+
+To debug the pods, if they are unreachable after Ingress is enabled:
+```console
+kubectl get pods
+```
+
+Then run the following command:
+```console
+kubectl describe pods <POD_NAME>
+```

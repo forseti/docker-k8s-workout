@@ -16,4 +16,4 @@ spec:
         - name: client
           image: isometria/dkw-10-client
           ports:
-            - containerPort: 9999
+            - containerPort: 3000
