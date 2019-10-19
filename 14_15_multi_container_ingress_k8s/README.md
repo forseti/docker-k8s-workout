@@ -157,7 +157,7 @@ Go to the browser and enter URL: `http://localhost:8001/api/v1/namespaces/kube-s
 
 You will be presented with the login screen, so click `SKIP`.
 
-**Warning:** Do not do this when deploying kubernetes clusters to a public facing server!
+**Warning:** Do not do this when deploying Kubernetes clusters to a public facing server!
 
 #### Running the Demo
 If You're using Docker Desktop, sometimes Kubernetes may hang. So restart the cluster using the Docker Desktop Settings.
