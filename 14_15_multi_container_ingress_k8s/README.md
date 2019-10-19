@@ -98,7 +98,7 @@ Ingress Config is an object that has a set of rules describing how traffic shoul
 
 For Docker Desktop, first run **Mandatory Command**:
 ```console
-https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/cloud-generic.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
 ```
 
 Then enable the service, using the following command:
@@ -111,14 +111,59 @@ To verify the Ingress service is enabled:
 kubectl get svc -n ingress-nginx
 ```
 
-##### Debugging
+##### Debugging/Troubleshooting
 
-To debug the pods, if they are unreachable after Ingress is enabled:
+First, check if the endpoints are up:
+```console
+kubectl get endpoints
+```
+
+If one of them has no endpoints, check the pods to get the `<POD_NAME>`:
 ```console
 kubectl get pods
 ```
 
-Then run the following command:
+Then run the following command to see the errors:
 ```console
 kubectl describe pods <POD_NAME>
 ```
+
+#### Dashboard
+
+To setup Dashboard for local development (with Git Bash), download the `kubernetes-dashboard.yaml`:
+```console
+curl -O https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+```
+
+Edit the file. At `line 116`, add below `--auto-generate-certificates`:
+```yaml
+args:
+  - --auto-generate-certificates
+  - --enable-skip-login
+  - --disable-settings-authorizer
+```
+
+Then apply the changes:
+```console
+kubectl apply -f kubernetes-dashboard.yaml
+```
+
+Start the server:
+```console
+kubectl proxy
+```
+
+Go to the browser and enter URL: `http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
+
+You will be presented with the login screen, so click `SKIP`.
+
+**Warning:** Do not do this when deploying kubernetes clusters to a public facing server!
+
+#### Running the Demo
+If You're using Docker Desktop, sometimes Kubernetes may hang. So restart the cluster using the Docker Desktop Settings.
+
+Once it's up, do the following commands in order:
+1. `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml`
+2. `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/cloud-generic.yaml`
+3. `kubectl create secret generic pg-password --from-literal PG_PASSWORD=pgpassword123`
+4. `kubectl apply -f k8s`
